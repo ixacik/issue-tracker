@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply relative z-20 bg-gray-800 p-10 h-screen;
+}
+
+.main {
+  @apply shadow-xl rounded-3xl border-none relative w-full bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] from-fuchsia-300 via-green-400 to-rose-700;
+}
+
+.main::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/images/grid.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+  @apply rounded-3xl;
+}
+
+.menu_item {
+  @apply p-3 px-16 text-center hover:bg-white hover:shadow-xl hover:text-black rounded-2xl;
+}
