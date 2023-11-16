@@ -40,5 +40,9 @@ body {
 }
 
 .logo {
-  @apply flex justify-center items-center text-2xl font-medium mb-10 text-white hover:text-blue-500 hover:scale-110 ease-in-out duration-500;
+  @apply flex justify-center items-center font-medium mb-10 text-white hover:text-blue-500 hover:scale-110 ease-in-out duration-500;
+}
+
+.sidebar_arrow {
+  @apply absolute z-30 text-gray-700 right-[-2rem] my-auto text-2xl mb-10 mr-2 hover:scale-125 hover:text-white ease-in-out duration-500;
 }
