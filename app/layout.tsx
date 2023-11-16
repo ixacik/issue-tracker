@@ -16,7 +16,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex">
         <Nav />
-        <main className="main">{children}</main>
+        <main className="main">
+          <div className="grid_svg">{children}</div>
+        </main>
       </body>
     </html>
   );
