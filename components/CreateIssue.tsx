@@ -8,12 +8,14 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import axios from "axios";
 import { createIssueSchema } from "@/app/validationSchemas";
+import Spinner from "@/components/Spinner";
 
 type IssueForm = z.infer<typeof createIssueSchema>;
 
-const CreateIssue = () => {
+const CreateIssue = ({ onIssueCreated }) => {
   const [mouseOver, setMouseOver] = useState(false);
   const [labelSucess, setLabelSucess] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const {
     register,
@@ -37,8 +39,11 @@ const CreateIssue = () => {
         className="container_main w-40 min-w-fit h-24 group-hover:w-full group-hover:h-96 ease-in-out duration-100"
         onSubmit={handleSubmit(async (data) => {
           try {
+            setIsLoading(true);
             await axios.post("/api/issues", data);
+            onIssueCreated();
             setLabelSucess(true);
+            setIsLoading(false);
             reset();
           } catch (err) {
             console.error(err);
@@ -46,7 +51,7 @@ const CreateIssue = () => {
         })}
       >
         <div className="flex flex-row items-center">
-          <button className="button_main">
+          <button className="button_main" disabled={isLoading}>
             {mouseOver ? "Post Issue" : "Create Issue"}
           </button>
           {labelSucess && (
@@ -55,6 +60,7 @@ const CreateIssue = () => {
               <p className="ml-2 text-green-500">Issue has been created!</p>
             </div>
           )}
+          {isLoading && <Spinner />}
           {(errors.title || errors.description) && (
             <div className="flex flex-row items-center">
               <IoClose className="ml-4 text-red-500" />

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply relative z-20 bg-gray-800 p-10 h-screen w-screen overscroll-none;
+  @apply relative z-20 bg-gray-800 p-5 md:p-10 h-screen w-screen overscroll-none;
 }
 
 .main::-webkit-scrollbar {
