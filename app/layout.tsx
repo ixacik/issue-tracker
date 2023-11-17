@@ -17,7 +17,9 @@ export default function RootLayout({
       <body className="flex md:flex-row flex-col">
         <Nav />
         <main className="main">
-          <div className="grid_svg">{children}</div>
+          <div className="grid_svg">
+            <div className="p-16">{children}</div>
+          </div>
         </main>
       </body>
     </html>

@@ -32,7 +32,7 @@ body {
 }
 
 .menu_item {
-  @apply p-3 ease-in-out border-2 border-transparent duration-500 px-16 text-center hover:bg-white hover:shadow-xl hover:text-black rounded-2xl;
+  @apply p-3 ease-in-out hover:scale-110 border-2 border-transparent duration-500 px-16 text-center hover:bg-white hover:shadow-xl hover:text-black rounded-2xl;
 }
 
 .menu_item_active {
@@ -44,5 +44,26 @@ body {
 }
 
 .sidebar_arrow {
-  @apply absolute z-30 text-gray-700 right-[-2rem] my-auto text-2xl mb-10 mr-2 hover:scale-125 hover:text-white ease-in-out duration-500;
+  @apply absolute z-30 cursor-pointer text-gray-700 right-[-2rem] my-auto text-2xl mb-10 mr-2 hover:scale-125 hover:text-white ease-in-out duration-500;
+}
+
+.button_main {
+  @apply px-5 py-2 bg-blue-500 text-white border-2 border-transparent font-medium rounded-3xl ease-in-out duration-500 hover:scale-110;
+}
+
+.button_main:hover {
+  --tw-shadow: 0 0 25px -5px rgb(0 0 0 / 0.1), 0 0 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 0 25px -5px var(--tw-shadow-color),
+    0 0 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  @apply shadow-blue-500;
+}
+
+.container_main {
+  @apply bg-gray-800 p-6 rounded-3xl shadow-xl;
+}
+
+.input_box {
+  @apply rounded-3xl text-gray-700 px-4 py-2 focus:ring-0 outline-none w-full hover:scale-[105%] ease-in-out duration-500;
 }
